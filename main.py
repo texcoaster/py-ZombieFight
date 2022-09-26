@@ -6,6 +6,7 @@ from backgound import *
 from cannon import *
 from enemy import *
 from shop import *
+from menu import *
 from inventory import *
 
 
@@ -28,11 +29,13 @@ def main():
   enemy = Enemy()
   shop = Shop()
   inventory = Inventory()
+  menu = Menu()
 
   root.children.append(background)
   root.children.append(cannon)
   root.children.append(enemy)
   root.children.append(shop)
+  root.children.append(menu)
   root.children.append(inventory)
 
 

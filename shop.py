@@ -4,10 +4,10 @@ from gameobject import *
 class Shop(GameObject):
   def __init__(self):
     super().__init__(0, 0)
-    self.width = 200
-    self.height = 65
+    # self.width = 200
+    # self.height = 65
 
-    self.press = False
+    # self.press = False
 
   def draw(self, screen):
     pass
