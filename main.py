@@ -2,41 +2,36 @@ import pygame
 import sys
 
 from gameobject import *
-from backgound import *
-from cannon import *
+from background import *
 from enemy import *
-from shop import *
-from menu import *
-from inventory import *
+from player import *
+from game_config import *
 
 
 tmr = 0
 index = 0
+level = 1
 
 def main():
-  global tmr, index
+  global tmr, index, level
 
   pygame.init()
   pygame.display.set_caption("ZOMBIEFIGHT")
   screen = pygame.display.set_mode((960, 720))
   clock = pygame.time.Clock()
 
+  GameConfig.MAXLEVEL = 1
+
   root = GameObject(0, 0)
   GameObject.root = root
 
   background = BackGround()
-  cannon = Cannon()
   enemy = Enemy()
-  shop = Shop()
-  inventory = Inventory()
-  menu = Menu()
+  player = Player()
 
   root.children.append(background)
-  root.children.append(cannon)
   root.children.append(enemy)
-  root.children.append(shop)
-  root.children.append(menu)
-  root.children.append(inventory)
+  root.children.append(player)
 
 
   while True:
@@ -52,7 +47,10 @@ def main():
           screen = pygame.display.set_mode((670, 925))
 
     background.setIndex(index)
+    background.setLevel(level)
     
+    key = pygame.key.get_pressed()
+    root.keyInput(key)
     root.draw(screen)
 
 
