@@ -47,7 +47,6 @@ class BackGround(GameObject):
     if GameConfig.index == 1:
       for i in range(-960, 1920, 960):
         for j in range(-720, 1440, 720):
-          print(self.x, self.y)
           screen.blit(self.backgound_image[GameConfig.level-1], [self.x+i, self.y+j])
 
     for child in self.children:
