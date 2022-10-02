@@ -12,8 +12,10 @@ tmr = 0
 index = 0
 level = 1
 
+press_spacekey = False
+
 def main():
-  global tmr, index, level
+  global tmr, index, level, press_spacekey
 
   pygame.init()
   pygame.display.set_caption("ZOMBIEFIGHT")
@@ -52,6 +54,13 @@ def main():
     key = pygame.key.get_pressed()
     root.keyInput(key)
     root.draw(screen)
+
+    if index == 0:
+      if key[pygame.K_SPACE] == True:
+        press_spacekey = True
+      if key[pygame.K_SPACE] == False and press_spacekey:
+        press_spacekey = False
+        index = 1
 
 
     pygame.display.update()
