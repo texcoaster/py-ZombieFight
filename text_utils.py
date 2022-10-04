@@ -1,6 +1,6 @@
 import pygame
 
-class DrawText:
+class TextUtils:
   def drawText(screen, x, y, text, color, size, pretty=False):
     if pretty == False:
       fnt = pygame.font.Font(None, size)

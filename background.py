@@ -4,7 +4,7 @@ from gameobject import *
 from game_config import *
 from level import *
 from score import *
-from drawtext import *
+from text_utils import *
 
 class BackGround(GameObject):
   def __init__(self):
@@ -43,7 +43,7 @@ class BackGround(GameObject):
   def draw(self, screen):
     if GameConfig.index == 0:
       screen.blit(self.backgound_image[GameConfig.level-1], [0, 0])
-      DrawText.drawText(screen, 480, 650, "press space to start", (0, 0, 0), 35)
+      TextUtils.drawText(screen, 480, 650, "press space to start", (0, 0, 0), 35)
     if GameConfig.index == 1:
       for i in range(-960, 1920, 960):
         for j in range(-720, 1440, 720):
