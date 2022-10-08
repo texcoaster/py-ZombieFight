@@ -19,27 +19,6 @@ class BackGround(GameObject):
   def keyInput(self, key):
     self.children[0].keyInput(key)
 
-    if GameConfig.index == 1:
-      if key[pygame.K_UP] or key[pygame.K_w]:
-        self.y += int(GameConfig.player_speed * math.sin(math.radians(90)))
-        if self.y >= 720:
-          self.y = 0
-
-      if key[pygame.K_DOWN] or key[pygame.K_s]:
-        self.y += int(GameConfig.player_speed * math.sin(math.radians(270)))
-        if self.y <= -720:
-          self.y = 0
-
-      if key[pygame.K_LEFT] or key[pygame.K_a]:
-        self.x += int(GameConfig.player_speed * math.cos(math.radians(180)))
-        if self.x >= 960:
-          self.x = 0
-
-      if key[pygame.K_RIGHT] or key[pygame.K_d]:
-        self.x += int(GameConfig.player_speed * math.cos(math.radians(0)))
-        if self.x <= -960:
-          self.x = 0
-
   def draw(self, screen):
     if GameConfig.index == 0:
       screen.blit(self.backgound_image[GameConfig.level-1], [0, 0])
@@ -51,3 +30,20 @@ class BackGround(GameObject):
 
     for child in self.children:
       child.draw(screen)
+  
+  def goUp(self):
+    self.y += int(GameConfig.player_speed * math.sin(math.radians(90)))
+    if self.y >= 720:
+      self.y = 0
+  def goDown(self):
+    self.y += int(GameConfig.player_speed * math.sin(math.radians(270)))
+    if self.y <= -720:
+      self.y = 0
+  def goLeft(self):
+    self.x += int(GameConfig.player_speed * math.cos(math.radians(180)))
+    if self.x >= 960:
+      self.x = 0
+  def goRight(self):
+    self.x += int(GameConfig.player_speed * math.cos(math.radians(0)))
+    if self.x <= -960:
+      self.x = 0

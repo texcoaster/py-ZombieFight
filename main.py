@@ -6,6 +6,7 @@ from background import *
 from enemy import *
 from player import *
 from game_config import *
+from root import *
 
 
 tmr = 0
@@ -22,16 +23,18 @@ def main():
   GameConfig.level = 1
   GameConfig.MAXLEVEL = 2
 
-  root = GameObject(0, 0)
-  GameObject.root = root
+  root = Root()
+  Root.root = root
 
+  gameobject = GameObject(0, 0)
   background = BackGround()
   enemy = Enemy()
   player = Player()
 
-  root.children.append(background)
-  root.children.append(enemy)
-  root.children.append(player)
+  root.children.append(gameobject)
+  gameobject.children.append(background)
+  gameobject.children.append(enemy)
+  gameobject.children.append(player)
 
 
   while True:

@@ -1,6 +1,4 @@
 class GameObject:
-  root = None
-
   def __init__(self, x, y):
     self.x = x
     self.y = y
@@ -13,3 +11,12 @@ class GameObject:
   def draw(self, screen):
     for child in self.children:
       child.draw(screen)
+  
+  def goUp(self):
+    pass
+  def goDown(self):
+    pass
+  def goLeft(self):
+    pass
+  def goRight(self):
+    pass
