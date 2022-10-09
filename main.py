@@ -1,5 +1,6 @@
 import pygame
 import sys
+from enemy_controller import EnemyController
 
 from gameobject import *
 from background import *
@@ -28,12 +29,12 @@ def main():
 
   gameobject = GameObject(0, 0)
   background = BackGround()
-  enemy = Enemy()
+  enemycontroller = EnemyController()
   player = Player()
 
   root.children.append(gameobject)
   gameobject.children.append(background)
-  gameobject.children.append(enemy)
+  gameobject.children.append(enemycontroller)
   gameobject.children.append(player)
 
 

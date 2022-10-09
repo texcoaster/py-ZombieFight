@@ -40,10 +40,10 @@ class BackGround(GameObject):
     if self.y <= -720:
       self.y = 0
   def goLeft(self):
-    self.x += int(GameConfig.player_speed * math.cos(math.radians(180)))
+    self.x += int(GameConfig.player_speed * math.cos(math.radians(0)))
     if self.x >= 960:
       self.x = 0
   def goRight(self):
-    self.x += int(GameConfig.player_speed * math.cos(math.radians(0)))
+    self.x += int(GameConfig.player_speed * math.cos(math.radians(180)))
     if self.x <= -960:
       self.x = 0
